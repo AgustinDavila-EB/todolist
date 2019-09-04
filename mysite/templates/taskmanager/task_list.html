@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Lista de Tareas</h2>
+    <a href="{% url 'logout' %}"><button class="buttonLogout" style="vertical-align:middle"><span>LOGOUT </span></button>
+    </a>
+    <p style="color:red;">Do your homework !</p>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+
+    </style>   
+    <table style="text-align:center; width:100%">
+        <tr>
+            <td><b>{{'ID'}}</b></td>
+            <td><b>{{'Name'}}</b></td>
+            <td><b>{{'User'}}</b></td>
+            <td><b>{{'Priority'}}</b></td>
+            <td><b>{{'Done'}}</b></td>
+            <td><b>{{'Date'}}</b></td>
+        </tr>
+   {% for task in object_list %}
+        <tr>
+           <td>{{task.id}}</td>
+           <td>{{task.name}}</td>
+           <td>{{task.author}}</td>
+           <td>{{task.priority}}</td>
+           <td>{{task.done}}</td>
+           <td>{{task.create}}</td>
+           <td><a href="{% url 'task-update' pk=task.id %}"><button class="buttonUpdate" style="vertical-align:middle"><span>Update</span></button></a></td>
+           <td><a href="{% url 'task-delete' pk=task.id %}"><button class="buttonDelete" style="vertical-align:middle"><span>Delete</span></button></a></td>
+           <td><a href="{% url 'task-complete' pk=task.id %}"><button class="buttonComplete" style="vertical-align:middle"><span>{{task.complete}}</span></button></a></td>
+       </tr>
+
+   {% endfor %}
+   </table>
+   <p><a href="{% url 'task-create' %}"><button class="buttonCreate" style="vertical-align:middle"><span>Create a new Task</span></button></a></p>
+    <p><a href="{%url 'events' %}"><button class="buttonCreate" style="vertical-align:middle"><span>Back to Events</span></button></a></p>
+
+
+{% endblock %}

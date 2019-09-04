@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Your Events</h2>
+    <a href="{% url 'logout' %}"><button class="buttonLogout" style="vertical-align;middle"><span>LOGOUT </span></button>
+    </a>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+         
+    </style>   
+    <table style="text-align:center; width:100%">
+        <tr>
+            <td><b>{{'Name'}}</b></td>
+            <td><b>{{'Start'}}</b></td>
+            <td><b>{{'End'}}</b></td>
+            <td><b>{{'Capacity'}}</b></td>
+            <td><b>{{'Online'}}</b></td>
+        </tr>
+        {% for event in events.events %}
+        <tr>
+            <td>{{event.name.text}}</td>
+            <td>{{event.start.local}}</td>
+            <td>{{event.end.local}}</td>
+            <td>{{event.capacity}}</td>
+            <td>{{event.online_event}}</td>
+            <td><a href="{% url 'task-list'%}"><button class="buttonCreate" style="vertical-align:middle"><span>Tasks</span></button></a></td>
+        </tr>
+
+   {% endfor %}
+   </table>
+
+{% endblock %}

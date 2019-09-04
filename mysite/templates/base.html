@@ -1,0 +1,143 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+  <style>
+    a:visited {
+      color: blue;
+    }
+    .buttonLogout {
+      background-color: white;
+      border: 2px solid black;
+      border-radius: 8px;
+      color: red;
+      padding: 3px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      }
+    
+    .buttonLogout:hover {
+      background-color: red;
+      color: white;
+      }
+
+    .buttonYes {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        color: rgb(241, 36, 36);
+        padding: 3px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0px 30px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        }
+
+    .buttonYes:hover {
+        background-color: #f44336;
+        color: white;
+        }
+    
+    .buttonNo {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        color: rgb(49, 13, 255);
+        padding: 3px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+    
+    .buttonNo:hover {
+        background-color: rgb(17, 67, 202);
+        color: white;
+        }
+        
+    .buttonDelete {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        color: red;
+        padding: 3px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+    
+    .buttonDelete:hover {
+        background-color: red;
+        color: white;
+        }
+    
+    .buttonCreate {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        color: blue;
+        padding: 3px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+    
+    .buttonCreate:hover {
+        background-color: blue;
+        color: white;
+        }
+
+    .buttonUpdate {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        color: green;
+        padding: 3px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+    
+    .buttonUpdate:hover {
+        background-color: green;
+        color: white;
+        }
+
+      .buttonComplete{
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        color: purple;
+        padding: 3px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+    
+    .buttonComplete:hover {
+        background-color: purple;
+        color: white;
+        }
+    </style>
+
+</head>
+<body>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
